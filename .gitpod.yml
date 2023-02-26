@@ -2,9 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: juliaup --auto --confirm --color=yes --verbose
-  - command: julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
-  - command: julia --project=. -e 'using Pluto; Pluto.run()'
+  - init: juliaup run 1.7 setup
+    command: julia --project=@. -e 'using Pluto; Pluto.run(port=8000, launch_browser=false, require_secret_for_open_links=false)'
 
 ports:
   - port: 8000
