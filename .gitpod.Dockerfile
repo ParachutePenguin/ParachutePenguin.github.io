@@ -13,11 +13,12 @@ USER gitpod
 #            Pkg.add(["Pluto", "PlutoUI"])'
 
 # Install Julia via juliaup
-RUN curl -sSL "https://julialang-s3.julialang.org/bin/julia-1.6-latest-linux-x86_64.tar.gz" -o julia.tar.gz && \
-    tar xzf julia.tar.gz && \
-    rm -rf julia.tar.gz && \
-    mv julia-* /usr/local && \
-    ln -fs /usr/local/julia-*/bin/julia /usr/local/bin/julia && \
+RUN  curl -fsSL https://install.julialang.org | sh && \
+#RUN curl -sSL "https://julialang-s3.julialang.org/bin/julia-1.6-latest-linux-x86_64.tar.gz" -o julia.tar.gz && \
+#    tar xzf julia.tar.gz && \
+#    rm -rf julia.tar.gz && \
+#    mv julia-* /usr/local && \
+#    ln -fs /usr/local/julia-*/bin/julia /usr/local/bin/julia && \
     #julia -e 'using Pkg; Pkg.add("Pluto"); using Pluto; Pluto.run()'
     julia -e 'using Pkg; \
             Pkg.add(["Pluto", "PlutoUI"])'
