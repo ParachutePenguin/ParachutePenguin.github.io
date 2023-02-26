@@ -6,8 +6,8 @@ tasks:
 #   - command: julia --project=@. -e 'using Pluto; Pluto.run(port=8000, launch_browser=false, require_secret_for_open_links=false)'
   - command: julia --project=@. -e 'using Pluto; Pluto.run(port=8000, launch_browser=false)'
 
-#env:
-#  PLUTO_ALLOW_REMOTE: "true"
+env:
+  - JULIA_PLUTO_REQUIRE_AUTH="false"
 
 ports:
   #- port: 8000
