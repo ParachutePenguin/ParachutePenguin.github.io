@@ -12,6 +12,6 @@ RUN brew install juliaup
 #ENV PATH="${PATH}:/home/gitpod/.juliaup/bin"
 
 # Install Pluto.jl
-RUN julia -e 'using Pkg; Pkg.add("Pluto"); Pkg.add("PlutoUI"); Pkg.precompile();'
+RUN julia -e 'using Pkg; Pkg.add("Franklin"); Pkg.precompile();'
 
 EXPOSE 8000
